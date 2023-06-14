@@ -1,5 +1,21 @@
+
+import Calculator from "./components/Calculator/Calculator";
+import { GlobalStyle } from "./styles/GlobalStyles";
+
 const App = () => {
-	return <h1>Núcleo de la aplicación</h1>;
+	
+	
+
+
+	return (
+		<>
+			<GlobalStyle />
+			<Calculator />
+			
+		</>
+	);
+	
 };
 
 export default App;
+
