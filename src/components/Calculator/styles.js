@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
-	width: 60%;
+	width: 100%;
 	margin: auto;
 	background-color: #ffffff;
 	border-radius: 24px 24px 100px 24px;
@@ -11,10 +11,11 @@ const StyledContainer = styled.div`
 const FormContainer = styled.div`
 
     display: flex;
+
     justify-content: space-around;
     gap: 20px;
     position: relative;
-	margin-bottom: 2rem;
+	margin: 2rem;
 	&::after {
 		content: '';
 		position: absolute;
@@ -55,6 +56,7 @@ const StyledShow = styled.p`
     font-size: 3rem;
 	font-weight: bold;
 	font-style: italic;
+	padding: 1rem 2rem;
 `;
 
 const StyledNumber = styled.span`
@@ -74,6 +76,7 @@ const ArrowButton = styled.div`
 	padding: 1rem;
 	border-radius: 50%;
 	background-color: #854dff;
+	cursor: pointer;
 `;
 
 export {StyledContainer , FormContainer , StyledForm , StyledLabel , StyledInput , StyledShow , StyledNumber , ArrowButton }

@@ -35,23 +35,30 @@ const Calculator = () => {
 
               <StyledForm>
                 <StyledLabel>DAY</StyledLabel>
-                <StyledInput  onChange={e => {
+                <div>
+                  <StyledInput  onChange={e => {
                     setDay(e.target.value)
                 }} />
+                </div>
+                
               </StyledForm>
 
               <StyledForm>
                 <StyledLabel>MONTH</StyledLabel>
-                <StyledInput  onChange={e => {
+                <div>
+                  <StyledInput  onChange={e => {
                     setMonth(e.target.value)
-                }} />
+                    }}  />
+                </div>               
               </StyledForm>
 
               <StyledForm>
                 <StyledLabel>YEAR</StyledLabel>
-                <StyledInput  onChange={e => {
-                    setYear(e.target.value)
-                }} />
+                <div>
+                  <StyledInput  onChange={e => {
+                      setYear(e.target.value)
+                  }} />
+                </div>
               </StyledForm>
             
           </FormContainer>
