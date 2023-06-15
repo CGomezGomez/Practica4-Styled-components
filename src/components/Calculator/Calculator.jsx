@@ -5,6 +5,7 @@ const Calculator = () => {
     const [day, setDay] = useState('');
     const [month, setMonth] = useState('');
     const [year, setYear] = useState('');
+
     const [years, setYears] = useState('--');
     const [months, setMonths] = useState('--');
     const [days, setDays] = useState('--');
@@ -21,17 +22,33 @@ const Calculator = () => {
             let calculatedD = currentDay - day;
           
 
-            if (calculatedM < 0) {
-              calculatedY -= 1;
-              calculatedM += 12;
-            }
-            if (calculatedD < 0) {
-              calculatedM -= 1;
-              const lastDayOfMonth = new Date(year, month - 1, 0).getDate();
-              calculatedD += lastDayOfMonth;
-            }
-            
+            if (currentDay >= day) {
 
+              calculatedD = currentDay - day;
+
+            } else {
+
+              calculatedD = 31 + currentDay - day;
+              calculatedM--;
+
+            }
+            if (day === currentDay && month === currentMonth) {
+
+              calculatedM++;
+              calculatedY++;
+
+            }
+        
+            if (currentMonth >= month) {
+              calculatedM = currentMonth - month;
+
+            } else {
+
+              calculatedM = 12 + currentMonth - month;
+              calculatedY--;
+
+            }
+        
               setYears(calculatedY);
               setMonths(calculatedM);
               setDays(calculatedD);
