@@ -20,6 +20,16 @@ const Calculator = () => {
             let calculatedM = currentMonth - month;
             let calculatedD = currentDay - day;
           
+
+            if (calculatedM < 0) {
+              calculatedY -= 1;
+              calculatedM += 12;
+            }
+            if (calculatedD < 0) {
+              calculatedM -= 1;
+              const lastDayOfMonth = new Date(year, month - 1, 0).getDate();
+              calculatedD += lastDayOfMonth;
+            }
             
 
               setYears(calculatedY);
