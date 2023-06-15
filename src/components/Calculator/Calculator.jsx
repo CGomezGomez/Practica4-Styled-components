@@ -22,31 +22,14 @@ const Calculator = () => {
             let calculatedD = currentDay - day;
           
 
-            if (currentDay >= day) {
-
-              calculatedD = currentDay - day;
-
-            } else {
-
-              calculatedD = 31 + currentDay - day;
-              calculatedM--;
-
+            if (calculatedM < 0) {
+              calculatedY -= 1;
+              calculatedM += 12;
             }
-            if (day === currentDay && month === currentMonth) {
-
-              calculatedM++;
-              calculatedY++;
-
-            }
-        
-            if (currentMonth >= month) {
-              calculatedM = currentMonth - month;
-
-            } else {
-
-              calculatedM = 12 + currentMonth - month;
-              calculatedY--;
-
+            if (calculatedD < 0) {
+              calculatedM -= 1;
+              const lastDayOfPreviousMonth = new Date(year, month - 1, 0).getDate();
+              calculatedD += lastDayOfPreviousMonth;
             }
         
               setYears(calculatedY);
