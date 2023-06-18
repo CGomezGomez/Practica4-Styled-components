@@ -28,8 +28,8 @@ const Calculator = () => {
             }
             if (calculatedD < 0) {
               calculatedM -= 1;
-              const lastDayOfPreviousMonth = new Date(year, month - 1, 0).getDate();
-              calculatedD += lastDayOfPreviousMonth;
+              const lastDayPreviousMonth = new Date(year, month - 1, 0).getDate();
+              calculatedD += lastDayPreviousMonth;
             }
         
               setYears(calculatedY);
